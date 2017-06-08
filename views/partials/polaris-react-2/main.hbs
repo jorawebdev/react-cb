@@ -1,0 +1,8 @@
+<div data-version="{{layoutClass}}" class="{{layout}}" id="{{id}}">
+        <div id="logo"></div>
+        <div>
+        {{#if partial}}
+               {{> (lookup . "partial")}} 
+        {{/if}}
+        </div>
+</div>

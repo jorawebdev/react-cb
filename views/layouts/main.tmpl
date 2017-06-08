@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Test Harness</title>
+    <link href="/core/component-style-guide/latest/css/component-style-guide.macys-base.css" rel="stylesheet">
+    <link href="/core/component-style-guide/latest/css/component-style-guide.mcom-sprite.css" rel="stylesheet">
+
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
+    <!-- bright tag needs to be in the head to load some scripts -->
+    <!--script type="text/javascript" src="//s.btstatic.com/tag.js">
+    { site: "YQClrLy", mode: "sync" }
+    </script-->
+</head>
+<body>
+{{{body}}}
+{{> analytics}}
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+<% } %>
+{{> data-dictionary}}
+<noscript>
+<!--iframe src="//s.thebrighttag.com/iframe?c=YQClrLy" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe-->
+</noscript>
+</body>
+</html>
