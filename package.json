@@ -112,6 +112,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "request": "2.75.0",
     "serve-favicon": "2.2.0",
     "throng": "1.0.1",
