@@ -12,7 +12,7 @@ export default class Page extends Component {
   updateFeature(id, feature){
     this.setState({id, feature});
   }
-  
+
   render(){
     return(
       <div>

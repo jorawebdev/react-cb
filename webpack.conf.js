@@ -57,7 +57,9 @@ webpackConfig.resolve.modules.push(
     path.resolve(__dirname + '/node_modules/react-router/node_modules/value-equal/node_modules'),
     path.resolve(__dirname + '/node_modules/react-router/node_modules/value-equal'),
     path.resolve(__dirname + '/node_modules/axios'),
-    path.resolve(__dirname + '/node_modules/axios/node_modules')
+    path.resolve(__dirname + '/node_modules/axios/node_modules'),
+    path.resolve(__dirname + '/node_modules/redux'),
+    path.resolve(__dirname + '/node_modules/redux/node_modules')
 );
 
 module.exports = webpackConfig;
