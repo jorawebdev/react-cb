@@ -6,6 +6,7 @@ let AddItem = ({ dispatch }) => {
   let input
   return (
     <div>
+      <h4>Add Items</h4>
       <form onSubmit={e => {
         e.preventDefault()
         if (!input.value.trim()) {
@@ -21,7 +22,6 @@ let AddItem = ({ dispatch }) => {
           Add Item
         </button>
       </form>
-      <div>Count in AddItem</div>
     </div>
   )
 }

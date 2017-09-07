@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Body extends Component {
   constructor( props ){
@@ -7,14 +8,15 @@ export default class Body extends Component {
   }
 
   setFilter(filter) {
-    console.log(filter, this.props);
+    console.log(filter, this.props, this.state);
     this.setState({filter});
     document.body.classList = [];
     document.body.classList.add(filter);
   }
 
   isActive(value){
-    return 'btn '+((value===this.state.selected) ?'active':'default');
+    console.log(value, this.state);
+    return 'btn '+((value===this.state.filter) ?'active':'default');
   }
 
   render() {
@@ -23,8 +25,10 @@ export default class Body extends Component {
     colors.forEach((color,i) => {
       buttons.push(<button className={this.isActive.bind(this, color)} onClick={this.setFilter.bind(this, color)} key={i}>Click</button>);
     });
+    //console.log(this.props);
     return(
       <div>
+        <Link to="projects" className="button secondary">Projects</Link>
         <h1>Common Body {this.props.data.brand}</h1>
         <div>{buttons}</div>
       </div>

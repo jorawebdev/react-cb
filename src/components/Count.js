@@ -8,7 +8,6 @@ let Count = ({ dispatch }) => {
   return (
     <div>
       <h4>Count Component</h4>
-
       <a href="" onClick={
         e => {
           e.preventDefault()

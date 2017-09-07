@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import LogoImg from 'images/stars_constellation_sky-01-256.png';
 
 class Header extends Component {
   constructor( props ){
@@ -8,9 +9,9 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <header>
+        <img src={LogoImg} alt="Component Browser"/>
         This is {this.props.data.brand} header
         <h1>In header value: {this.props.value}</h1>
       </header>

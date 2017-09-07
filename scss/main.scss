@@ -1,3 +1,6 @@
+/*@import '~/component-style-guide/components/_panels';
+@import '~/component-style-guide/components/_forms';
+*/
 body{
         &.Crimson{
                 background: rgba(237,20,61,0.2);
@@ -21,4 +24,5 @@ body{
         .clear{
                 clear:both;
         }
+        .container{margin: 1em;}
 }
