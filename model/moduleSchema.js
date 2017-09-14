@@ -13,7 +13,7 @@ module.exports = new Schema({
     date: Date,
     dependent: [],
     dependencies:{},
-    changelog:[String]
+    changelog:[{}]
   }]
 });
 // create a model using it

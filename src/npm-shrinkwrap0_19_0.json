@@ -1,9 +1,12 @@
 {
   "name": "@page/bag",
-  "version": "0.19.0",
+  "version": "0.22.0",
   "dependencies": {
+    "@core/michael":{
+      "version": "0.1.0"
+    },
     "@core/common": {
-      "version": "0.30.0",
+      "version": "0.31.0",
       "from": "@core/common@>=0.30.0 <0.31.0",
       "resolved": "http://ci-artifacts.devops.fds.com/artifactory/api/npm/macys-npm-private/@core/common/-/@core/common-0.30.0.tgz",
       "dependencies": {
@@ -2221,7 +2224,7 @@
       }
     },
     "@core/component-style-guide": {
-      "version": "0.19.0",
+      "version": "0.21.0",
       "from": "@core/component-style-guide@>=0.0.0 <1.0.0",
       "resolved": "http://ci-artifacts.devops.fds.com/artifactory/api/npm/macys-npm-private/@core/component-style-guide/-/@core/component-style-guide-0.19.0.tgz",
       "dependencies": {

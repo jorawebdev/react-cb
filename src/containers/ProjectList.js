@@ -4,12 +4,16 @@ import { connect } from 'react-redux'
 import { selectProject, selectProjPackage, setArtifactDate } from '../actions'
 import CSS from "../../scss/main.scss";
 import Pack from '../components/Pack'
-import shrk from '../npm-shrinkwrap0_19_0.json'
+//import shrk from '../npm-shrinkwrap0_19_0.json'
+//import shrk from '../npm-shrinkwrap_hdr2.json'
 
 class ProjectList extends Component {
   constructor( props ){
     super(props);
     this.updateParent = this.updateParent.bind(this);
+    this.state = {
+      changelog: []
+    }
   }
 
   componentWillMount(){
@@ -39,6 +43,7 @@ class ProjectList extends Component {
     //console.log('in updateParent');
     let id, name;
     let token = 'private_token=Ti3KJWDxG2rqsSmNsYAm';
+    let that = this;
     if(e){
       e.preventDefault();
       id = e.target.value;
@@ -64,34 +69,26 @@ class ProjectList extends Component {
       this.props.selectProjPackage('');
       this.props.setArtifactDate('');
     })
-  }
 
-  getShrink(){
-    axios.get('/dependenciesDiff').then(res =>{
-      console.log(res);
+    axios.get('/changelog?id=' + id)
+    .then(res => {
+      console.log(res.data)
+      that.setState({ changelog: res.data})
     })
-    .catch(err=>{
-      console.log(err);
-    });
+    .catch( err => {
+      console.log('error', err)
+    })
   }
-
+/*
   addShrink(){
-    console.log(shrk);
-    /*
-    axios.get('shrk').then(res =>{
-      console.log(res);
-    });
-    */
-    let s = JSON.stringify(shrk);
-    //let collection = {'id':'2','version':'0.18.0','content':shrk,'date':new Date()}
-
-    axios({method:'post',url:'/publish',data:{'name':s}}).then(res =>{
+    axios({method:'post',url:'/publish',data:shrk}).then(res =>{
       console.log(res);
     }).
     catch(err=>{
       console.log(err);
     });
   }
+*/
   render() {
     //console.log('in ProjectList render', this.props);
     let createdDate = (this.props.date != '') ? 'Build Updated On: ' + this.props.date: '';
@@ -103,17 +100,15 @@ class ProjectList extends Component {
           )}
         </select>
         <div className="large-2 columns">Project ID: {this.props.project.id}</div>
-        <div className="large-4 columns">{createdDate}</div>
-        <div className="large-2 columns"><button className="button" onClick={this.getShrink} >Compare</button></div>
-        <div className="large-1 columns"><button className="button" onClick={this.addShrink} >Save Shrink</button></div>
-        <Pack {...this.props}/>
+        <div className="large-6 columns">{createdDate}</div>
+        {/*<div className="large-1 columns"><button className="button" onClick={this.addShrink} >Save</button></div>*/}
+        <Pack {...this.props} {...this.state}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  //console.log(state);
   return {
     project: state.selectProject,
     pack: state.selectProjPackage.package,

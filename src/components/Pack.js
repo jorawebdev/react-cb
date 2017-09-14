@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Changes from './Changes'
 
 class Pack extends Component {
   constructor( props ){
@@ -9,8 +10,8 @@ class Pack extends Component {
     //console.log(this.props);
     if(this.props.pack){
       return(
-        <div className="large-16 columns panel">
-          <div className="large-5 columns">
+        <div className="panel cb-grid">
+          <div className="large-4 cb-col">
             <h5>Dependencies</h5>
             <ul className="no-bullet">
               {Object.keys(this.props.pack.dependencies).map(item =>
@@ -18,15 +19,19 @@ class Pack extends Component {
               )}
             </ul>
           </div>
-          <div className="large-6 columns">
+          <div className="large-5 cb-col">
             <h5>Description</h5>
             {this.props.pack.description}
           </div>
-          <div className="large-1 columns">
+          <div className="large-3 cb-col">
+            <h5>Changes</h5>
+            <Changes {...this.props.changelog}/>
+          </div>
+          <div className="large-1 cb-col">
             <h5>Version</h5>
             {this.props.pack.version}
           </div>
-          <div className="large-4 columns">
+          <div className="large-3 cb-col cb-col-last">
             <h5>Email</h5>
             {this.props.pack.author.email}
           </div>

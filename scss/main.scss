@@ -1,3 +1,5 @@
+@import "~component-style-guide/macys-base";
+@import "~component-style-guide/mcom-sprites";
 /*@import '~/component-style-guide/components/_panels';
 @import '~/component-style-guide/components/_forms';
 */
@@ -24,5 +26,34 @@ body{
         .clear{
                 clear:both;
         }
+        &.cb{
+          background: #65636b;
+          color: #fff;
+          font-family: monospace;
+        }
+        &.cb .panel h1, &.cb .panel h3, &.cb .panel h3, &.cb .panel h4, &.cb .panel h5, &.cb .panel h6{
+            font-family: monospace;
+            color:#000;
+        }
+        .logo-box{margin:.5em 1em;}
+        .logo-box img{margin-right: .3em;}
+        .logo-box i{
+          font-size: 3em;
+          color: #193a63;
+          font-weight: 700;
+          vertical-align: bottom;
+        }
+        .logo{height: 3em;}
         .container{margin: 1em;}
+        .container .panel{
+          background-color: #254a77;
+          border: none;
+          border-radius: .3em;
+          padding: 0 .5em;
+        }
+        &.cb .cb-grid{width: 100%;display: table;}
+        &.cb .cb-grid .cb-col{display: table-cell;border-right: 1px dotted;padding:0 .3em;}
+        &.cb .cb-grid .cb-col-last{border:0}
+        .changelog-box li{border-bottom: 1px solid #ccc;}
+        .changelog-box i{display: inline-block;margin-right: .3em;vertical-align: text-bottom;}
 }

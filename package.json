@@ -1,7 +1,7 @@
 {
   "name": "@page/polaris-react-cb",
   "description": "",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "author": {
     "name": "Alex Zavodnik",
     "email": ""
@@ -91,7 +91,6 @@
   ],
   "dependencies": {
     "@core/common": "0.x",
-    "@core/component-style-guide": "^0.x",
     "@core/middleware": "1.0.12",
     "@core/vendor": "0.1.26",
     "axios": "^0.16.1",
